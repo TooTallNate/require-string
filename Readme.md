@@ -1,7 +1,27 @@
 
 # require-string
 
-  Turns an arbitrary String into a CommonJS compatible module
+  Turns an arbitrary String into a CommonJS compatible module.
+
+  So this:
+
+``` css
+.wat {
+  color: red;
+}
+
+div i {
+  color: blue;
+}
+```
+
+  Turns into this:
+
+``` js
+module.exports = function(){
+  return ".wat {\n  color: red;\n}\n\ndiv i {\n  color: blue;\n}\n";
+};
+```
 
 ## Installation
 
@@ -11,7 +31,7 @@
 
 ## API
 
-### requireString(String str) -> String
+### requireString(String str) → String
 
 
 ## License
