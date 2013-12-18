@@ -1,6 +1,6 @@
 {
   "name": "require-string",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Turns an arbitrary String into a CommonJS compatible module",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,12 @@
     "type": "git",
     "url": "git://github.com/TooTallNate/require-string.git"
   },
+  "keywords": [
+    "require",
+    "commonjs",
+    "data",
+    "string"
+  ],
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
   "license": "MIT",
   "bugs": {
