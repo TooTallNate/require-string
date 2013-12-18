@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var program = require('commander');
+var requireString = require('../');
+
+program
+  .version(require('../package').version)
+  .option('-f, --file [file]')
+  .parse(process.argv);
+
+var filename = program.file || program.args[0];
+
+var stream = !filename ? process.stdin : fs.createReadStream(filename);
+
+var data = [];
+stream.on('data', function (b) {
+  data.push(b);
+});
+stream.on('end', function () {
+  var js = requireString(Buffer.concat(data).toString('utf8'));
+  console.log(js);
+});
